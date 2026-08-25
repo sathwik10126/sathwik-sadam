@@ -1,13 +1,9 @@
-// ---- Navbar shadow on scroll ----
 const nav = document.getElementById('mainNav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('shadow-sm', window.scrollY > 20);
 });
 
-// ==========================================
-// CONTACT FORM — EmailJS (no backend needed)
-// ==========================================
-emailjs.init('19z430QvgUnlXmB6T'); // Public Key
+emailjs.init('19z430QvgUnlXmB6T');
 
 const form = document.getElementById('contact-form');
 const status = document.getElementById('form-status');
@@ -21,13 +17,7 @@ form.addEventListener('submit', function (e) {
   const emailVal = document.getElementById('email').value;
   const messageVal = document.getElementById('message').value;
 
-  const templateParams = {
-    name: nameVal,
-    from_name: nameVal,
-    from_email: emailVal,
-    email: emailVal,
-    message: messageVal
-  };
+  const templateParams = { name: nameVal, from_name: nameVal, from_email: emailVal, email: emailVal, message: messageVal };
 
   emailjs.send('service_w15efdi', 'template_sdjlxnr', templateParams)
     .then(function () {
